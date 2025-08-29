@@ -7,7 +7,12 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors()); // Allows all origins
+app.use(cors({
+  origin: [
+    '*',
+    'https://travelbucket12.netlify.app'
+  ]
+}));
 app.use(express.json());
   // Remove favicon.ico 404 error
   app.get('/favicon.ico', (req, res) => res.status(204).end());
