@@ -15,7 +15,7 @@ app.use(express.json());
 // Routes
 const placeRoutes = require('./routes/placeRoutes');
 app.use('/api/places', placeRoutes);
-app.get('/', (req, res) => res.send('Travel Wishlist API'));
+app.get('/api', (req, res) => res.send('Travel Wishlist API'));
 // Connect MongoDB
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
